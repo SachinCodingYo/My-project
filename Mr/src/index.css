@@ -1,0 +1,45 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .kyc-input {
+    @apply w-full h-12 rounded-lg border border-slate-300 bg-white px-3 text-[15px] outline-none transition;
+  }
+  .kyc-input:focus {
+    border-color: #4f46e5;
+    box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.12);
+  }
+}
+
+@layer base {
+  html {
+    font-family: "Inter", system-ui, sans-serif;
+    background: #f8fafc;
+    color: #0f172a;
+  }
+
+  body {
+    @apply m-0 min-h-screen bg-slate-50 text-slate-900 antialiased;
+  }
+
+  * {
+    @apply box-border;
+  }
+
+  a {
+    @apply text-inherit no-underline;
+  }
+
+  button {
+    @apply disabled:cursor-not-allowed disabled:opacity-60;
+  }
+}
+
+@layer utilities {
+  .safe-bottom {
+    padding-bottom: calc(1rem + env(safe-area-inset-bottom));
+  }
+}
